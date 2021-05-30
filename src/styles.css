@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+nav > ul > li {
+  list-style: none;
+  margin: 20px;
+}
