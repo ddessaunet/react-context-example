@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import FeedPage from "./components/FeedPage";
 
+import AppState from "./context/app-state";
+
 export default function App() {
   return (
     <div className="App">
@@ -20,10 +22,12 @@ export default function App() {
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/feed" component={FeedPage} />
-        </Switch>
+        <AppState>
+          <Switch>
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/feed" component={FeedPage} />
+          </Switch>
+        </AppState>
       </Router>
     </div>
   );
